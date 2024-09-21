@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #d1d5c7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+
+        /* Contenedor del producto */
+        .product-container {
+            display: flex;
+            padding: 40px;
+            justify-content: space-between;
+        }
+
+        .product-images {
+            width: 40%;
+        }
+
+        .product-images img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .product-images .thumbnails {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-images .thumbnails img {
+            width: 30%;
+        }
+
+        .product-details {
+            width: 55%;
+            color: black;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #d9534f;
+            margin-bottom: 20px;
+        }
+
+        .product-info {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+
+
+        .color-options,
+        .size-options {
+            margin-bottom: 20px;
+        }
+
+        .color-options div,
+        .size-options div {
+            display: inline-block;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 70px;
+            text-align: center;
+        }
+
+        .cart-button {
+            padding: 15px 20px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/Logo.png" alt="RunSports" style="height: 80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calzado.html">Calzado</a></li>
+                    <!-- Modificar el enlace de "Sobre Nosotros" para que redirija a la nueva página -->
+                    <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Sección del Producto -->
+    <div class="product-container">
+        <!-- Imágenes del Producto -->
+        <div class="product-images">
+            <img src="assets/tenis2.png" alt="Tenis Duramo SL">
+            <div class="thumbnails">
+                <img src="assets/tenis1.png" alt="Vista 1">
+                <img src="assets/tenis3.png" alt="Vista 2">
+                <img src="assets/tenis3.png" alt="Vista 3">
+            </div>
+
+        </div>
+
+        <!-- Detalles del Producto -->
+        <div class="product-details">
+            <h1 class="product-title">Tenis Duramo SL</h1>
+            <p class="product-price">$379.950</p>
+            <p class="product-info">***PRODUCTO UNISEX***<br>Antes de escoger tu talla te recomendamos revisar la
+                equivalencia en la guía de tallas, H: Hombre | M: Mujer</p>
+            <ul>
+                <li>ENVÍO GRATIS A PARTIR DE $249.999</li>
+                <li>PAGA SEGURO PUEDES PAGAR EN LÍNEA</li>
+                <li>DEVOLUCIONES GRATIS, ¿NO ES TU TALLA? DEVUÉLVELO EN UN PLAZO DE 60 DÍAS</li>
+            </ul>
+
+            <!-- Opciones de colores -->
+            <div class="color-options">
+                <h4>Colores</h4>
+                <div>Negro</div>
+                <div>Blanco</div>
+                <div>Azul</div>
+                <div>Verde</div>
+            </div>
+
+            <!-- Opciones de tallas -->
+            <div class="size-options">
+                <h4>Tallas</h4>
+                <div>35</div>
+                <div>36</div>
+                <div>37</div>
+                <div>38</div>
+                <div>39</div>
+                <div>40</div>
+                <div>41</div>
+                <div>42</div>
+                <div>43</div>
+            </div>
+
+            <!-- Botón añadir al carrito -->
+            <button class="cart-button">AÑADIR AL CARRITO</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>RUNSPORTS75.COM</p>
+        <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
+        <p>Llámanos: 3004371955</p>
+        <div>
+            <a href="#">Enlace 1</a> |
+            <a href="#">Enlace 2</a> |
+            <a href="#">Enlace 3</a> |
+            <a href="#">Enlace 4</a>
+        </div>
+        <p>&copy; 2024 Todo.Deporte - Todos los derechos reservados</p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
