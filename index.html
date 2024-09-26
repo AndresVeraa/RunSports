@@ -10,75 +10,8 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
     rel="stylesheet">
-  <style>
-    body {
-      background-color: #d1d5c7;
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-
-    .product-card {
-      background-color: black;
-      /* Fondo negro para las tarjetas */
-      border: 1px solid white;
-      /* Bordes blancos */
-      border-radius: 5px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-
-
-    .product-img {
-      height: 500px;
-      width: 500px;
-      
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 15px;
-    }
-
-    .product-name {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: white;
-      /* Texto de producto en blanco */
-    }
-
-    .product-price {
-      color: #dc3545;
-      font-weight: bold;
-    }
-
-    .hero-section {
-      position: relative;
-      text-align: center;
-      color: white;
-      background-image: url('assets/DSC_0082.jpg');
-      background-size: cover;
-      height: 100vh;
-    }
-
-
-    /* Footer */
-    footer {
-      background-color: black;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-  </style>
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -87,7 +20,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="assets/Logo.png" alt="RunSports" style="height: 80px;">
+        <img src="assets/Logo.png" alt="RunSports">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,13 +31,11 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
           <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
-          <!-- Modificar el enlace de "Sobre Nosotros" para que redirija a la nueva página -->
           <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
         </ul>
       </div>
-
     </div>
   </nav>
 
@@ -117,14 +48,11 @@
   </section>
 
   <!-- Sección de Sobre Nosotros -->
-  <section class="about-section py-5"
-    style="background-image: url('assets/tienda.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <section class="about-section py-5">
     <div class="container">
       <div class="row">
-        <!-- Columna para Vision -->
         <div class="col-md-6">
-          <div class="p-4"
-            style="background-color: #d3d3a3; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <div class="p-4">
             <h2 class="fw-bold">Visión</h2>
             <p>
               Nuestra visión es ser la marca líder en el mercado nacional e internacional en la distribución y venta de
@@ -133,17 +61,13 @@
               preferida de nuestros clientes y socios comerciales. Queremos inspirar a las personas a adoptar un estilo
               de vida saludable, proporcionando prendas que se adapten a sus necesidades deportivas y cotidianas.
             </p>
-
           </div>
         </div>
-
-        <!-- Columna para Misión -->
         <div class="col-md-6">
-          <div class="p-4"
-            style="background-color: #d3d3a3; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <div class="p-4">
             <h2 class="fw-bold">Misión</h2>
             <p>
-              En [Nombre del Negocio], nuestra misión es ofrecer a nuestros clientes ropa deportiva de la más alta
+              En RunSports65, nuestra misión es ofrecer a nuestros clientes ropa deportiva de la más alta
               calidad (AAA), combinando estilo, comodidad y rendimiento a precios accesibles. Nos esforzamos por
               proporcionar una experiencia de compra excepcional, tanto al por mayor como al por menor, que satisfaga
               las necesidades de deportistas y amantes de un estilo de vida activo. A través de un servicio confiable y
@@ -154,13 +78,12 @@
       </div>
     </div>
   </section>
+
   <!-- Sección de Productos -->
   <section class="products-section py-5">
     <div class="container">
       <h2 class="fw-bold mb-4">Recomendado para ti</h2>
       <div class="row">
-
-        <!-- Producto 1 -->
         <div class="col">
           <div class="product-card">
             <img src="assets/camisaadidas.png" class="product-img img-fluid" alt="Producto 1">
@@ -170,8 +93,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Producto 2 -->
         <div class="col">
           <div class="product-card">
             <img src="assets/2.png" class="product-img img-fluid" alt="Producto 2">
@@ -181,8 +102,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Producto 3 -->
         <div class="col">
           <div class="product-card">
             <img src="assets/3.png" class="product-img img-fluid" alt="Producto 3">
@@ -193,8 +112,6 @@
           </div>
         </div>
       </div>
-
-    </div>
     </div>
   </section>
 

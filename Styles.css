@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+    background-color: #d1d5c7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: black;
+}
+
+.navbar-brand img {
+    height: 80px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-image: url('assets/DSC_0082.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+}
+
+/* About Section */
+.about-section {
+    background-image: url('assets/tienda.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about-section .p-4 {
+    background-color: #d3d3a3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Products Section */
+.products-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.products-section h2 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.product-card {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.product-price {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+    /* Footer */
+    footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+
+/* Product Card Styles */
+.product-card {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-img {
+    height: 600px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.product-price {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Filter Section Styles */
+#genderFilter,
+#brandFilter,
+#sizeFilter {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+body {
+    background-color: #d3d3a3;
+    /* Color de fondo similar al que aparece en la imagen */
+    color: #333;
+    /* Color del texto */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text {
+    padding-top: 145px;
+}
+
+.container {
+    flex: 1;
+    /* Hace que la sección principal crezca para ocupar el espacio disponible */
+}
+
+.about-image {
+    padding-left: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
