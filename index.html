@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RunSports</title>
+  <title>Inicio - RunSports</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+    rel="stylesheet">
   <style>
-     body {
-            background-color: #d1d5c7;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
+    body {
+      background-color: #d1d5c7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .product-card {
+      background-color: black;
+      /* Fondo negro para las tarjetas */
+      border: 1px solid white;
+      /* Bordes blancos */
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+
+    .product-img {
+      height: 500px;
+      width: 500px;
+      
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      /* Texto de producto en blanco */
+    }
+
+    .product-price {
+      color: #dc3545;
+      font-weight: bold;
+    }
 
     .hero-section {
       position: relative;
@@ -24,104 +64,157 @@
       height: 100vh;
     }
 
-    .circle-img {
-      width: 150px;
-      height: 150px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-    }
+
     /* Footer */
     footer {
-            background-color: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-        footer a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
   </style>
 </head>
+
 <body>
 
-<!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="assets/Logo.png" alt="RunSports" style="height: 80px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
-        <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
-        <li class="nav-item"><a class="nav-link" href="calzado.html">Calzado</a></li>
-        <!-- Modificar el enlace de "Sobre Nosotros" para que redirija a la nueva página -->
-        <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
-      </ul>
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/Logo.png" alt="RunSports" style="height: 80px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
+          <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
+          <!-- Modificar el enlace de "Sobre Nosotros" para que redirija a la nueva página -->
+          <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+        </ul>
+      </div>
+
     </div>
-    
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero Section -->
-<section class="hero-section d-flex align-items-center">
-  <div class="container text-center">
-    <h1 class="display-4">COMODIDAD & CONFORT</h1>
-    <p class="lead">¡Comienza tu vida saludable!</p>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class="display-4">COMODIDAD & CONFORT</h1>
+      <p class="lead">¡Comienza tu vida saludable!</p>
+    </div>
+  </section>
 
-<!-- Sección de Categorías -->
-<section class="categories py-5">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-md-3">
-        <div class="circle-img" style="background-image: url('assets/Run.png');"></div>
-        <h4>CORRER</h4>
-      </div>
-      <div class="col-md-3">
-        <div class="circle-img" style="background-image: url('assets/Train.png');"></div>
-        <h4>ENTRENAR</h4>
-      </div>
-      <div class="col-md-3">
-        <div class="circle-img" style="background-image: url('assets/futbol.jpg');"></div>
-        <h4>FUTBOL</h4>
-      </div>
-      <div class="col-md-3">
-        <div class="circle-img" style="background-image: url('assets/Basket.png');"></div>
-        <h4>BASKET</h4>
+  <!-- Sección de Sobre Nosotros -->
+  <section class="about-section py-5"
+    style="background-image: url('assets/tienda.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+      <div class="row">
+        <!-- Columna para Vision -->
+        <div class="col-md-6">
+          <div class="p-4"
+            style="background-color: #d3d3a3; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h2 class="fw-bold">Visión</h2>
+            <p>
+              Nuestra visión es ser la marca líder en el mercado nacional e internacional en la distribución y venta de
+              ropa deportiva AAA, reconocida por la excelencia en calidad y servicio al cliente. Aspiramos a expandir
+              nuestra presencia, innovando constantemente en diseño y tecnología, para seguir siendo la elección
+              preferida de nuestros clientes y socios comerciales. Queremos inspirar a las personas a adoptar un estilo
+              de vida saludable, proporcionando prendas que se adapten a sus necesidades deportivas y cotidianas.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Columna para Misión -->
+        <div class="col-md-6">
+          <div class="p-4"
+            style="background-color: #d3d3a3; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h2 class="fw-bold">Misión</h2>
+            <p>
+              En [Nombre del Negocio], nuestra misión es ofrecer a nuestros clientes ropa deportiva de la más alta
+              calidad (AAA), combinando estilo, comodidad y rendimiento a precios accesibles. Nos esforzamos por
+              proporcionar una experiencia de compra excepcional, tanto al por mayor como al por menor, que satisfaga
+              las necesidades de deportistas y amantes de un estilo de vida activo. A través de un servicio confiable y
+              personalizado, buscamos convertirnos en el aliado ideal para quienes desean lo mejor en ropa deportiva.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- Sección de Productos -->
+  <section class="products-section py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Recomendado para ti</h2>
+      <div class="row">
 
-<!-- Footer -->
-<footer>
-  <p>RUNSPORTS75.COM</p>
-  <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
-  <p>Llámanos: 3004371955</p>
-  <div>
-      <a href="#">Enlace 1</a> | 
-      <a href="#">Enlace 2</a> | 
-      <a href="#">Enlace 3</a> | 
+        <!-- Producto 1 -->
+        <div class="col">
+          <div class="product-card">
+            <img src="assets/camisaadidas.png" class="product-img img-fluid" alt="Producto 1">
+            <div class="product-info">
+              <p class="product-name">Adidas Performance</p>
+              <p class="product-price">$349.950</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col">
+          <div class="product-card">
+            <img src="assets/2.png" class="product-img img-fluid" alt="Producto 2">
+            <div class="product-info">
+              <p class="product-name">Nike</p>
+              <p class="product-price">$199.950</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col">
+          <div class="product-card">
+            <img src="assets/3.png" class="product-img img-fluid" alt="Producto 3">
+            <div class="product-info">
+              <p class="product-name">Under Armour</p>
+              <p class="product-price">$139.900</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>RUNSPORTS75.COM</p>
+    <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
+    <p>Llámanos: 3004371955</p>
+    <div>
+      <a href="#">Enlace 1</a> |
+      <a href="#">Enlace 2</a> |
+      <a href="#">Enlace 3</a> |
       <a href="#">Enlace 4</a>
-  </div>
-  <p>&copy; 2024 Todo.Deporte - Todos los derechos reservados</p>
-</footer>
+    </div>
+    <p>&copy; 2024 Todo.Deporte - Todos los derechos reservados</p>
+  </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
