@@ -10,12 +10,11 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
     rel="stylesheet">
+  <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-
 
   <!-- Barra de Navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
@@ -32,119 +31,260 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
           <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
-
-          <!-- Modificar el enlace de "Sobre Nosotros" para que redirija a la nueva página -->
           <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="validacion.html"><i class="bi bi-person"></i></a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
         </ul>
       </div>
-
     </div>
   </nav>
 
-  <!-- Sección de Productos para Mujeres -->
+  <!-- Sección de Productos para Hombres -->
   <section class="py-5">
     <div class="container">
       <h1 class="text-center mb-4">Ropa para Mujeres</h1>
 
       <div class="row mb-4">
         <div class="col-md-3">
-          <div class="filter-section">
-            <h5>Filtrar por:</h5>
-            <div class="mb-3">
-              <label for="genderFilter" class="form-label">Género</label>
-              <select class="form-select" id="genderFilter">
-                <option value="Mujer" selected>Mujer</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="brandFilter" class="form-label">Marca</label>
-              <select class="form-select" id="brandFilter">
-                <option value="Nike" selected>Nike</option>
-                <option value="Adidas">Adidas</option>
-                <option value="Under Armour">Under Armour</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="sizeFilter" class="form-label">Tallas</label>
-              <select class="form-select" id="sizeFilter">
-                <option value="S" selected>S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-            </div>
+          <h5>Filtrar por:</h5>
+          <!-- Filtro por Categoría -->
+          <div class="mb-3">
+            <label for="categoryFilter" class="form-label">Categoría</label>
+            <select class="form-select" id="categoryFilter">
+              <option value="all" selected>Todos</option>
+              <option value="camisas">Camisas</option>
+              <option value="shorts">Shorts</option>
+              <option value="calzado">Calzado</option>
+            </select>
+          </div>
+
+          <!-- Filtro por Marca -->
+          <div class="mb-3">
+            <label for="brandFilter" class="form-label">Marca</label>
+            <select class="form-select" id="brandFilter">
+              <option value="all" selected>Todas</option>
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
+            </select>
+          </div>
+
+          <!-- Filtro por Talla -->
+          <div class="mb-3">
+            <label for="sizeFilter" class="form-label">Tallas</label>
+            <select class="form-select" id="sizeFilter">
+              <option value="all" selected>Todas</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
           </div>
         </div>
 
         <!-- Lista de Productos -->
         <div class="col-md-9">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="row row-cols-1 row-cols-md-3 g-4" id="productGrid">
 
+            <!-- Camisas -->
             <!-- Producto 1 -->
-            <div class="col">
-              <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 1">
-                <div class="product-info">
-                  <p class="product-name">Adidas Performance</p>
-                  <p class="product-price">$179.900</p>
+            <div class="col product-item" data-category="camisas" data-brand="Adidas" data-size="M">
+              <a class="nav-link" href="DescripcionProdc.html">
+                <div class="product-card">
+                  <img src="assets/camisa1.png" class="product-img img-fluid" alt="Camisa Adidas Performance">
+                  <div class="product-info">
+                    <p class="product-name">Adidas Performance</p>
+                    <p class="product-price">$349.950</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Producto 2 -->
-            <div class="col">
+            <div class="col product-item" data-category="camisas" data-brand="Nike" data-size="L">
               <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 2">
+                <img src="assets/camisa2.png" class="product-img img-fluid" alt="Camisa Nike">
                 <div class="product-info">
-                  <p class="product-name">Adidas Performance</p>
-                  <p class="product-price">$149.900</p>
+                  <p class="product-name">Nike Camisa Sport</p>
+                  <p class="product-price">$299.950</p>
                 </div>
               </div>
             </div>
 
             <!-- Producto 3 -->
-            <div class="col">
+            <div class="col product-item" data-category="camisas" data-brand="Adidas" data-size="S">
               <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 3">
+                <img src="assets/camisa3.png" class="product-img img-fluid" alt="Camisa Adidas Classic">
                 <div class="product-info">
-                  <p class="product-name">Adidas Performance</p>
-                  <p class="product-price">$119.900</p>
+                  <p class="product-name">Adidas Classic</p>
+                  <p class="product-price">$279.950</p>
                 </div>
               </div>
             </div>
 
             <!-- Producto 4 -->
-            <div class="col">
+            <div class="col product-item" data-category="camisas" data-brand="Nike" data-size="XL">
               <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 4">
+                <img src="assets/camisa4.png" class="product-img img-fluid" alt="Camisa Nike Runner">
                 <div class="product-info">
-                  <p class="product-name">Nike</p>
-                  <p class="product-price">$164.950</p>
+                  <p class="product-name">Nike Runner</p>
+                  <p class="product-price">$319.950</p>
                 </div>
               </div>
             </div>
 
             <!-- Producto 5 -->
-            <div class="col">
+            <div class="col product-item" data-category="camisas" data-brand="Adidas" data-size="M">
               <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 5">
+                <img src="assets/camisa5.png" class="product-img img-fluid" alt="Camisa Adidas Sport">
                 <div class="product-info">
-                  <p class="product-name">Under Armour</p>
-                  <p class="product-price">$159.900</p>
+                  <p class="product-name">Adidas Sport</p>
+                  <p class="product-price">$329.950</p>
                 </div>
               </div>
             </div>
 
             <!-- Producto 6 -->
-            <div class="col">
+            <div class="col product-item" data-category="camisas" data-brand="Nike" data-size="XXL">
               <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" class="product-img img-fluid" alt="Producto 6">
+                <img src="assets/camisa6.png" class="product-img img-fluid" alt="Camisa Nike Elite">
                 <div class="product-info">
-                  <p class="product-name">Under Armour</p>
-                  <p class="product-price">$149.900</p>
+                  <p class="product-name">Nike Elite</p>
+                  <p class="product-price">$349.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shorts -->
+            <!-- Producto 7 -->
+            <div class="col product-item" data-category="shorts" data-brand="Nike" data-size="M">
+              <div class="product-card">
+                <img src="assets/short1.png" class="product-img img-fluid" alt="Short Nike Sport">
+                <div class="product-info">
+                  <p class="product-name">Nike Short Sport</p>
+                  <p class="product-price">$199.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="col product-item" data-category="shorts" data-brand="Adidas" data-size="L">
+              <div class="product-card">
+                <img src="assets/short2.png" class="product-img img-fluid" alt="Short Adidas Classic">
+                <div class="product-info">
+                  <p class="product-name">Adidas Short Classic</p>
+                  <p class="product-price">$189.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="col product-item" data-category="shorts" data-brand="Nike" data-size="S">
+              <div class="product-card">
+                <img src="assets/short3.png" class="product-img img-fluid" alt="Short Nike Runner">
+                <div class="product-info">
+                  <p class="product-name">Nike Short Runner</p>
+                  <p class="product-price">$219.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="col product-item" data-category="shorts" data-brand="Adidas" data-size="XL">
+              <div class="product-card">
+                <img src="assets/short4.png" class="product-img img-fluid" alt="Short Adidas Sport">
+                <div class="product-info">
+                  <p class="product-name">Adidas Short Sport</p>
+                  <p class="product-price">$199.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 11 -->
+            <div class="col product-item" data-category="shorts" data-brand="Nike" data-size="M">
+              <div class="product-card">
+                <img src="assets/short5.png" class="product-img img-fluid" alt="Short Nike Elite">
+                <div class="product-info">
+                  <p class="product-name">Nike Short Elite</p>
+                  <p class="product-price">$229.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 12 -->
+            <div class="col product-item" data-category="shorts" data-brand="Adidas" data-size="XXL">
+              <div class="product-card">
+                <img src="assets/short6.png" class="product-img img-fluid" alt="Short Adidas Runner">
+                <div class="product-info">
+                  <p class="product-name">Adidas Short Runner</p>
+                  <p class="product-price">$209.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calzado -->
+            <!-- Producto 13 -->
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="M">
+              <div class="product-card">
+                <img src="assets/calzado1.png" class="product-img img-fluid" alt="Calzado Nike Air Max">
+                <div class="product-info">
+                  <p class="product-name">Nike Air Max</p>
+                  <p class="product-price">$299.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 14 -->
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="L">
+              <div class="product-card">
+                <img src="assets/calzado2.png" class="product-img img-fluid" alt="Calzado Adidas Ultraboost">
+                <div class="product-info">
+                  <p class="product-name">Adidas Ultraboost</p>
+                  <p class="product-price">$349.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 15 -->
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="S">
+              <div class="product-card">
+                <img src="assets/calzado3.png" class="product-img img-fluid" alt="Calzado Nike Free Metcon">
+                <div class="product-info">
+                  <p class="product-name">Nike Free Metcon</p>
+                  <p class="product-price">$279.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 16 -->
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="XL">
+              <div class="product-card">
+                <img src="assets/calzado4.png" class="product-img img-fluid" alt="Calzado Adidas NMD">
+                <div class="product-info">
+                  <p class="product-name">Adidas NMD</p>
+                  <p class="product-price">$309.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 17 -->
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="M">
+              <div class="product-card">
+                <img src="assets/calzado5.png" class="product-img img-fluid" alt="Calzado Nike Pegasus">
+                <div class="product-info">
+                  <p class="product-name">Nike Pegasus</p>
+                  <p class="product-price">$289.950</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 18 -->
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="XXL">
+              <div class="product-card">
+                <img src="assets/calzado6.png" class="product-img img-fluid" alt="Calzado Adidas Superstar">
+                <div class="product-info">
+                  <p class="product-name">Adidas Superstar</p>
+                  <p class="product-price">$319.950</p>
                 </div>
               </div>
             </div>
@@ -171,6 +311,45 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Filtro de Categorías -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categoryFilter = document.getElementById('categoryFilter');
+      const brandFilter = document.getElementById('brandFilter');
+      const sizeFilter = document.getElementById('sizeFilter');
+      const productGrid = document.getElementById('productGrid');
+
+      function filterProducts() {
+        const selectedCategory = categoryFilter.value;
+        const selectedBrand = brandFilter.value;
+        const selectedSize = sizeFilter.value;
+
+        const productItems = document.querySelectorAll('.product-item');
+        productItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          const itemBrand = item.getAttribute('data-brand');
+          const itemSize = item.getAttribute('data-size');
+
+          // Verificar si el producto cumple con los filtros
+          if (
+            (selectedCategory === 'all' || itemCategory === selectedCategory) &&
+            (selectedBrand === 'all' || itemBrand === selectedBrand) &&
+            (selectedSize === 'all' || itemSize === selectedSize)
+          ) {
+            item.style.display = 'block'; // Mostrar el producto
+          } else {
+            item.style.display = 'none'; // Ocultar el producto
+          }
+        });
+      }
+
+      // Aplicar los filtros cuando cambian
+      categoryFilter.addEventListener('change', filterProducts);
+      brandFilter.addEventListener('change', filterProducts);
+      sizeFilter.addEventListener('change', filterProducts);
+    });
+  </script>
 
 </body>
 
