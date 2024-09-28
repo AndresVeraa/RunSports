@@ -1,22 +1,19 @@
+/* General Body Styles */
+body,
 .Inicio {
-    background-color: #FFFDEA;
-    /* Color de fondo similar al que aparece en la imagen */
+    background-color: #C7D7C3;
     color: #333;
-    /* Color del texto */
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
     display: flex;
     flex-direction: column;
 }
 
-
-
+/* Navbar */
 .navbar-brand img {
     height: 80px;
 }
-
 
 /* Hero Section */
 .hero-section {
@@ -28,14 +25,11 @@
     height: 100vh;
 }
 
-
-
 /* About Section */
 .about-section {
     background-image: url('assets/tienda.jpg');
     background-size: auto;
     background-position: center;
-
 }
 
 .about-section .p-4 {
@@ -44,10 +38,27 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* About Text Section */
+.about-text {
+    padding-top: 145px;
+}
+
+.about-video {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+
+.about-video video {
+    width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Products Section */
 .products-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
 }
 
 .products-section h2 {
@@ -55,54 +66,6 @@
     margin-bottom: 2rem;
 }
 
-.product-card {
-    background-color: black;
-    border: 1px solid white;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-}
-
-.product-img {
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 15px;
-}
-
-.product-name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-}
-
-.product-price {
-    color: #dc3545;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-
-/* Product Card Styles */
 .product-card {
     background-color: black;
     border: 1px solid white;
@@ -116,7 +79,7 @@ footer a {
 }
 
 .product-img {
-    height: 600px;
+    max-height: 200px;
     object-fit: cover;
     width: 100%;
 }
@@ -136,49 +99,7 @@ footer a {
     font-weight: bold;
 }
 
-/* Filter Section Styles */
-
-
-
-body {
-    background-color: #C7D7C3;
-    /* Color de fondo similar al que aparece en la imagen */
-    color: #333;
-    /* Color del texto */
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
-    display: flex;
-    flex-direction: column;
-}
-
-.about-text {
-    padding-top: 145px;
-}
-
-.container {
-    flex: 1;
-    /* Hace que la sección principal crezca para ocupar el espacio disponible */
-}
-
-.about-video {
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 20px;
-  }
-
- 
-  .about-video video {
-    width: 800px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  
-
-/* Contenedor del producto */
+/* Product Container */
 .product-container {
     display: flex;
     padding: 40px;
@@ -214,18 +135,10 @@ body {
     margin-bottom: 10px;
 }
 
-.product-price {
-    font-size: 1.5rem;
-    color: #d9534f;
-    margin-bottom: 20px;
-}
-
 .product-info {
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
-
-
 
 .color-options,
 .size-options {
@@ -252,6 +165,7 @@ body {
     cursor: pointer;
 }
 
+/* Form Section */
 .form-container {
     margin-top: 50px;
 }
@@ -276,4 +190,92 @@ body {
 
 .form-check-label {
     font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Capa semitransparente sobre el video */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Estilos del contenido sobre el video */
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.content a {
+    font-size: 1.2rem;
+}
+
+/* Ajustes para la barra de navegación y el footer */
+nav.navbar {
+    z-index: 3;
+}
+
+footer {
+    z-index: 3;
+    position: relative;
+}
+
+/* Ajustes en dispositivos móviles */
+@media (max-width: 768px) {
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
 }
