@@ -279,3 +279,84 @@ footer {
         font-size: 1rem;
     }
 }
+
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrado vertical */
+    height: 100%;
+    /* Para igualar la altura con la imagen */
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-price {
+    font-size: 2rem;
+    color: #ff5722;
+    /* Color vibrante para precio */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-info {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #555;
+}
+
+ul {
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Botones dinámicos */
+.btn-custom {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #ffc107;
+    cursor: pointer;
+}
+
+/* Estilo de la imagen del producto */
+
+.product-images img {
+    max-width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: auto;
+    /* Mantiene la proporción */
+    object-fit: cover;
+    /* Ajusta la imagen al tamaño del contenedor */
+}
+
+.product-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Asegura que la imagen ocupe el alto completo */
+}
+
+.product-images img:hover {
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el cursor */
+}
