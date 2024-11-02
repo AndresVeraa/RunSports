@@ -12,7 +12,8 @@ body,
 
 /* Navbar */
 .navbar-brand img {
-    height: 80px;
+    height: 100%;
+    width: 100%;
 }
 
 /* Hero Section */
@@ -206,13 +207,6 @@ footer a {
     text-decoration: none;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    position: relative;
-}
 
 .video-background {
     position: fixed;
