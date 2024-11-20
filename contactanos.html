@@ -94,8 +94,20 @@
         }
 
         /* Estilos del Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+        }
 
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
 
         /* Asegurar que el footer siempre esté al final */
         html,
@@ -125,7 +137,6 @@
     <!-- Capa semitransparente para mejorar la legibilidad del texto -->
     <div class="overlay"></div>
 
-
     <header>
         <!-- Barra de Navegación -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-black">
@@ -145,7 +156,12 @@
                         <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="Perfilusuario.html"><i class="bi bi-person"></i></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                        <a class="nav-link position-relative" href="Carrito.html">
+                            <i class="bi bi-cart"></i>
+                            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
                     </ul>
                 </div>
             </div>
@@ -202,8 +218,37 @@
 
             socialLinksContainer.appendChild(linkElement);
         });
-    </script>
 
+        // Función para obtener los productos del carrito
+        function getCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart;
+        }
+
+        // Función para guardar los productos en el carrito
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount(); // Actualizar el contador del carrito
+        }
+
+        // Función para agregar un producto al carrito
+        function addToCart(product) {
+            const cart = getCart();
+            cart.push(product);
+            saveCart(cart);
+        }
+
+        // Función para actualizar el contador del carrito
+        function updateCartCount() {
+            const cart = getCart();
+            const cartCount = cart.length;
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+
+        // Llamada a la función para actualizar el contador del carrito al cargar la página
+        updateCartCount();
+    </script>
+    
 </body>
 
 </html>
