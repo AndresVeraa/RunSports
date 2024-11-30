@@ -191,7 +191,7 @@
                   const yearSelect = document.getElementById('year');
                   const currentYear = new Date().getFullYear();
 
-                  for (let year = currentYear; year >= 1800; year--) {
+                  for (let year = currentYear; year >= 1900; year--) {
                     const option = document.createElement('option');
                     option.value = year;
                     option.textContent = year;
@@ -262,7 +262,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>theFitStep.COM</p>
+    <p>THEFITSTEP.COM</p>
     <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
     <p>Llámanos: 3004371955</p>
     <div>
@@ -299,7 +299,7 @@
       })
         .then(response => response.text())
         .then(message => alert(message))
-        .catch(error => console.error('Error:',error));
+        .catch(error => console.error('Error:', error));
     }
 
     function iniciarSesion() {
