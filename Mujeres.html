@@ -260,7 +260,7 @@
 
             <!-- Calzado -->
             <!-- Producto 13 -->
-            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="M">
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="36">
               <a class="product-link" href="DescripcionProdc.html" data-name="Nike Air Max" data-price="$229.950"
                 data-image="assets/calzado1.1.png">
                 <div class="product-card">
@@ -274,7 +274,7 @@
             </div>
 
             <!-- Producto 14 -->
-            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="L">
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="37">
               <a class="product-link" href="DescripcionProdc.html" data-name="Adidas Ultraboost" data-price="$349.950"
                 data-image="assets/calzado2.2.png">
                 <div class="product-card">
@@ -288,7 +288,7 @@
             </div>
 
             <!-- Producto 15 -->
-            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="S">
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="38">
               <a class="product-link" href="DescripcionProdc.html" data-name="Nike Free Metcon" data-price="$279.950"
                 data-image="assets/calzado3.3.png">
                 <div class="product-card">
@@ -302,7 +302,7 @@
             </div>
 
             <!-- Producto 16 -->
-            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="XL">
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="39">
               <a class="product-link" href="DescripcionProdc.html" data-name="Adidas NMD" data-price="$309.950"
                 data-image="assets/calzado4.4.png">
                 <div class="product-card">
@@ -316,7 +316,7 @@
             </div>
 
             <!-- Producto 17 -->
-            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="M">
+            <div class="col product-item" data-category="calzado" data-brand="Nike" data-size="40">
               <a class="product-link" href="DescripcionProdc.html" data-name="Nike Pegasus" data-price="$289.950"
                 data-image="assets/calzado5.5.png">
                 <div class="product-card">
@@ -330,7 +330,7 @@
             </div>
 
             <!-- Producto 18 -->
-            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="XXL">
+            <div class="col product-item" data-category="calzado" data-brand="Adidas" data-size="41">
               <a class="product-link" href="DescripcionProdc.html" data-name="Adidas Superstar" data-price="$319.950"
                 data-image="assets/calzado6.6.png">
                 <div class="product-card">
@@ -351,7 +351,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>theFitStep.COM</p>
+    <p>THEFITSTEP.COM</p>
     <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
     <p>Llámanos: 3004371955</p>
     <div>
@@ -373,37 +373,81 @@
       const brandFilter = document.getElementById('brandFilter');
       const sizeFilter = document.getElementById('sizeFilter');
       const productGrid = document.getElementById('productGrid');
-
+  
+      // Función para actualizar el filtro de tallas según la categoría seleccionada
+      function updateSizeFilter() {
+        const selectedCategory = categoryFilter.value;
+  
+        // Limpia las opciones de talla
+        sizeFilter.innerHTML = '<option value="all">Seleccionar talla</option>';
+  
+        if (selectedCategory === 'calzado') {
+          // Agregar tallas de calzado (37-43)
+          for (let i = 37; i <= 43; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            sizeFilter.appendChild(option);
+          }
+        } else if (selectedCategory === 'camisas' || selectedCategory === 'shorts') {
+          // Agregar tallas de ropa (S, M, L, XL)
+          const sizes = ['S', 'M', 'L', 'XL'];
+          sizes.forEach(size => {
+            const option = document.createElement('option');
+            option.value = size;
+            option.textContent = size;
+            sizeFilter.appendChild(option);
+          });
+        }
+      }
+  
+      // Función para filtrar los productos
       function filterProducts() {
         const selectedCategory = categoryFilter.value;
         const selectedBrand = brandFilter.value;
         const selectedSize = sizeFilter.value;
-
+  
         const productItems = document.querySelectorAll('.product-item');
         productItems.forEach(item => {
           const itemCategory = item.getAttribute('data-category');
           const itemBrand = item.getAttribute('data-brand');
           const itemSize = item.getAttribute('data-size');
-
+  
           // Verificar si el producto cumple con los filtros
-          if (
-            (selectedCategory === 'all' || itemCategory === selectedCategory) &&
-            (selectedBrand === 'all' || itemBrand === selectedBrand) &&
-            (selectedSize === 'all' || itemSize === selectedSize)
-          ) {
-            item.style.display = 'block'; // Mostrar el producto
-          } else {
-            item.style.display = 'none'; // Ocultar el producto
+          let showItem = true;
+  
+          // Filtros por categoría, marca y talla
+          if (selectedCategory !== 'all' && itemCategory !== selectedCategory) {
+            showItem = false;
           }
+  
+          if (selectedBrand !== 'all' && itemBrand !== selectedBrand) {
+            showItem = false;
+          }
+  
+          if (selectedSize !== 'all' && itemSize !== selectedSize) {
+            showItem = false;
+          }
+  
+          // Mostrar o esconder el producto según los filtros
+          item.style.display = showItem ? 'block' : 'none';
         });
       }
-
+  
       // Aplicar los filtros cuando cambian
-      categoryFilter.addEventListener('change', filterProducts);
-      brandFilter.addEventListener('change', filterProducts);
-      sizeFilter.addEventListener('change', filterProducts);
+      categoryFilter.addEventListener('change', function () {
+        updateSizeFilter();  // Actualiza el filtro de tallas
+        sizeFilter.value = 'all';  // Reinicia el filtro de talla
+        filterProducts();  // Aplica los filtros de productos
+      });
+  
+      brandFilter.addEventListener('change', filterProducts);  // Aplica los filtros de marca
+      sizeFilter.addEventListener('change', filterProducts);  // Aplica los filtros de talla
+  
+      // Inicializar el filtro de tallas en base a la categoría seleccionada al cargar
+      updateSizeFilter();
     });
-
+  
     // Agregar funcionalidad de click para redirigir con parámetros de producto
     document.querySelectorAll('.product-link').forEach(link => {
       link.addEventListener('click', function (e) {
@@ -416,7 +460,8 @@
       });
     });
   </script>
+  
 
 </body>
-  
+
 </html>
