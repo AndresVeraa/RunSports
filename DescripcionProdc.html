@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -31,10 +32,15 @@
                         <li class="nav-item"><a class="nav-link" href="Hombres.html">Hombres</a></li>
                         <li class="nav-item"><a class="nav-link" href="Mujeres.html">Mujeres</a></li>
                         <li class="nav-item"><a class="nav-link" href="Sobrenosotros.html">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Perfilusuario.html"><i class="bi bi-person"></i></a>
+                        <li class="nav-item"><a class="nav-link" href="Perfilusuario.html"><i
+                                    class="bi bi-person"></i></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="Carrito.html"><i class="bi bi-cart"></i> 
-                            <span id="cartCount" class="badge bg-danger">0</span></a></li> <!-- Muestra el contador de productos -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Carrito.html">
+                                <i class="bi bi-cart"></i>
+                                <span id="cartCount" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -63,112 +69,23 @@
                         <li>ENVÍO GRATIS A PARTIR DE $249.999</li>
                         <li>PAGA SEGURO PUEDES PAGAR EN LÍNEA</li>
                     </ul>
-                    <button class="btn btn-custom add-to-cart" data-id="product1" data-name="Adidas Performance"
-                        data-price="$349.950" data-image="assets/camisaadidas.png">Agregar al Carrito</button>
+                    <button class="btn btn-custom" id="addToCartButton">Agregar al Carrito</button>
+                    <p id="confirmationMessage" class="text-success mt-3" style="display: none;">¡Producto agregado al carrito!</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Sección de Productos -->
-    <section class="products-section py-5">
-        <div class="container">
-            <h2 class="fw-bold mb-4">Recomendado para ti</h2>
-            <div class="row">
-                <div class="col">
-                    <div class="product-card">
-                        <img src="assets/camisaadidas.png" class="product-img img-fluid" alt="Producto 1">
-                        <div class="product-info">
-                            <p class="product-name">Adidas Performance</p>
-                            <p class="product-price">$349.950</p>
-                            <button class="btn btn-primary add-to-cart" data-id="1" data-name="Adidas Performance"
-                                data-price="$349.950" data-image="assets/camisaadidas.png">Añadir al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="product-card">
-                        <img src="assets/2.png" class="product-img img-fluid" alt="Producto 2">
-                        <div class="product-info">
-                            <p class="product-name">Nike</p>
-                            <p class="product-price">$199.950</p>
-                            <button class="btn btn-primary add-to-cart" data-id="2" data-name="Nike"
-                                data-price="$199.950" data-image="assets/2.png">Añadir al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="product-card">
-                        <img src="assets/3.png" class="product-img img-fluid" alt="Producto 3">
-                        <div class="product-info">
-                            <p class="product-name">Under Armour</p>
-                            <p class="product-price">$139.900</p>
-                            <button class="btn btn-primary add-to-cart" data-id="3" data-name="Under Armour"
-                                data-price="$139.900" data-image="assets/3.png">Añadir al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <p>theFitStep.COM</p>
+        <p>THEFITSTEP.COM</p>
         <p>Visítanos: Av 3 #16-52, Cabos, Cúcuta - Norte de Santander</p>
         <p>Llámanos: 3004371955</p>
-        <div>
-            <a href="#">Enlace 1</a> |
-            <a href="#">Enlace 2</a> |
-            <a href="#">Enlace 3</a> |
-            <a href="#">Enlace 4</a>
-        </div>
         <p>&copy; 2024 Todo.Deporte - Todos los derechos reservados</p>
     </footer>
 
-    <!-- Script para insertar dinámicamente el producto -->
+    <!-- Script para manejar el carrito -->
     <script>
-        // Función para obtener los productos del carrito del localStorage
-        function getCart() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            return cart;
-        }
-
-        // Función para guardar los productos en el carrito
-        function saveCart(cart) {
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount(); // Actualizar el contador en el encabezado
-        }
-
-        // Función para agregar un producto al carrito
-        function addToCart(product) {
-            const cart = getCart();
-            cart.push(product);
-            saveCart(cart);
-            alert('Producto agregado al carrito!');
-        }
-
-        // Función para actualizar el contador de productos en el carrito
-        function updateCartCount() {
-            const cart = getCart();
-            const cartCount = cart.length;
-            document.getElementById('cartCount').textContent = cartCount;
-        }
-
-        // Escuchar los clics en los botones "Agregar al Carrito"
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const product = {
-                    id: button.getAttribute('data-id'),
-                    name: button.getAttribute('data-name'),
-                    price: button.getAttribute('data-price'),
-                    image: button.getAttribute('data-image')
-                };
-                addToCart(product);
-            });
-        });
-
-        // Script para insertar dinámicamente el producto en la página
+        // Obtener parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const productName = urlParams.get('name');
         const productPrice = urlParams.get('price');
@@ -178,7 +95,32 @@
         document.getElementById('productPrice').textContent = productPrice;
         document.getElementById('productImage').src = productImage;
 
-        // Actualizar el contador de productos en el carrito cuando la página se carga
+        // Actualizar contador del carrito
+        const updateCartCount = () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cartCount').textContent = cart.length;
+        };
+
+        // Agregar producto al carrito
+        document.getElementById('addToCartButton').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({
+                name: productName,
+                price: parseFloat(productPrice),
+                image: productImage
+            });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            // Mostrar mensaje de confirmación
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            confirmationMessage.style.display = 'block';
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 2000);
+        });
+
+        // Inicializar contador del carrito al cargar la página
         updateCartCount();
     </script>
 
